@@ -17,3 +17,59 @@
         "type": "image/png"
     }]
 }
+
+
+{
+    "name": "wignee hair",
+    "short_name": "wignee",
+    "description": "",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "theme_color": "#000",
+    "background_color": "#000",
+    "icons": [
+        {
+            "src": "https://cdn.progressifyme.com/wigneetest/images/1659083139193/icon-48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://cdn.progressifyme.com/wigneetest/images/1659083139193/icon-72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://cdn.progressifyme.com/wigneetest/images/1659083139193/icon-96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://cdn.progressifyme.com/wigneetest/images/1659083139193/icon-144.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://cdn.progressifyme.com/wigneetest/images/1659083139193/icon-168.png",
+            "sizes": "168x168",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://cdn.progressifyme.com/wigneetest/images/1659083139193/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable any"
+        },
+        {
+            "src": "https://cdn.progressifyme.com/wigneetest/images/1659083139193/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable any"
+        }
+    ]
+}
