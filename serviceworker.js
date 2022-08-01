@@ -45,3 +45,11 @@ function developmentMode() { return __DEVELOPMENT__ || __DEBUG__; } log("Hello f
 self.addEventListener('install', onInstall);
 self.addEventListener('fetch', onFetch);
 self.addEventListener("activate", onActivate);
+var button = document.getElementById("notifications");
+button.addEventListener('click', function(e) {
+    Notification.requestPermission().then(function(result) {
+        if(result === 'granted') {
+            randomNotification();
+        }
+    });
+});
