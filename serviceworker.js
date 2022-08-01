@@ -1,9 +1,9 @@
 'use strict';
 //缓存版本号，随着页面的更改，如果要更新缓存，请修改这里的版本号
-const version = 'v20190214';
+const version = 'v20190212';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = false;
-//配置两个离线用资源
+//配置两个离线用资源--不可以有404资源
 const offlineResources = ['/'];
 const ignoreFetch = [
   //忽略抓取的URL或目录，请酌情修改
