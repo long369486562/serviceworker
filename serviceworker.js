@@ -38,6 +38,7 @@ function cacheKey() { return [version, ...arguments].join(':'); }
 function updateStaticCache() {
   return caches.open(cacheKey('offline'))
     .then((cache) => {
+      console.log(cache);
       return cache.addAll(offlineResources);
     })
     .then(() => {
