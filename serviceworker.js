@@ -4,7 +4,7 @@ const version = 'v20190214';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = false;
 //配置两个离线用资源
-const offlineResources = ['/', '/offline.html'];
+const offlineResources = ['/'];
 const ignoreFetch = [
   //忽略抓取的URL或目录，请酌情修改
   /https?:\/\/xiongzhang.baidu.com\//,
