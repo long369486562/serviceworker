@@ -21,10 +21,21 @@ const ignoreFetch = [
 /.php$/, 
 /more/, 
 ];
-
-function onInstall(event) { log('install event in progress.');
- event.waitUntil(updateStaticCache()); }
-function updateStaticCache() { return caches.open(cacheKey('offline')).then((cache) => { return cache.addAll(offlineResources); }).then(() => { log('installation complete!'); }); }
+//开始安装
+function onInstall(event) {
+  log('install event in progress.');
+  event.waitUntil(updateStaticCache());
+}
+//更新静态缓存
+function updateStaticCache() {
+  return caches.open(cacheKey('offline'))
+         .then((cache) => {
+          return cache.addAll(offlineResources);
+         })
+         .then(() => {
+          log('installation complete!');
+         }); 
+}
 function onFetch(event) { const request = event.request; if (shouldAlwaysFetch(request)) { event.respondWith(networkedOrOffline(request)); return; } if (shouldFetchAndCache(request)) { event.respondWith(networkedOrCached(request)); return; } event.respondWith(cachedOrNetworked(request)); }
 function networkedOrCached(request) { return networkedAndCache(request).catch(() => { return cachedOrOffline(request) }); }
 function networkedAndCache(request) { return fetch(request).then((response) => { var copy = response.clone();
@@ -45,11 +56,3 @@ function developmentMode() { return __DEVELOPMENT__ || __DEBUG__; } log("Hello f
 self.addEventListener('install', onInstall);
 self.addEventListener('fetch', onFetch);
 self.addEventListener("activate", onActivate);
-var button = document.getElementById("notifications");
-button.addEventListener('click', function(e) {
-    Notification.requestPermission().then(function(result) {
-        if(result === 'granted') {
-            randomNotification();
-        }
-    });
-});
