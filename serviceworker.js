@@ -1,6 +1,6 @@
 'use strict';
 //缓存版本号，随着页面的更改，如果要更新缓存，请修改这里的版本号
-const version = 'v20190212';
+const version = 'v20190213';
 const __DEVELOPMENT__ = false;
 const __DEBUG__ = false;
 //配置两个离线用资源
