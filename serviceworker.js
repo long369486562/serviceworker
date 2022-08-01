@@ -21,6 +21,12 @@ const ignoreFetch = [
   /.php$/,
   /more/,
 ];
+//自定义打印方法
+function log() {
+  // if (developmentMode()) {
+    console.log("SW:", ...arguments);
+  // }
+}
 //开始安装
 function onInstall(event) {
   log('install event in progress.');
@@ -58,7 +64,7 @@ function onActivate(event) {
 }
 function removeOldCache() { return caches.keys().then((keys) => { return Promise.all(keys.filter((key) => { return !key.startsWith(version); }).map((key) => { return caches.delete(key); })); }).then(() => { log('removeOldCache completed.'); }); }
 
-function log() { if (developmentMode()) { console.log("SW:", ...arguments); } }
+
 function shouldAlwaysFetch(request) { return __DEVELOPMENT__ || request.method !== 'GET' || ignoreFetch.some(regex => request.url.match(regex)); }
 function shouldFetchAndCache(request) { return ~request.headers.get('Accept').indexOf('text/html'); }
 function developmentMode() { return __DEVELOPMENT__ || __DEBUG__; } log("Hello from ServiceWorker land!", version);
